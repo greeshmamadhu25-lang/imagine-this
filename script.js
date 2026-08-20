@@ -12,6 +12,7 @@ if (beginBtn) {
 
 
 const story = document.getElementById("story");
+const choices = document.getElementById("choices");
 
 if (story) {
 
@@ -29,6 +30,11 @@ if (story) {
     function showNextLine() {
 
         if (index >= lines.length) {
+
+            setTimeout(function () {
+                choices.classList.remove("hidden");
+            }, 1200);
+
             return;
         }
 
@@ -50,4 +56,20 @@ if (story) {
     }
 
     showNextLine();
+}
+
+
+const openPhoto = document.getElementById("openPhoto");
+const deletePhoto = document.getElementById("deletePhoto");
+
+if (openPhoto) {
+    openPhoto.addEventListener("click", function () {
+        alert("The photograph opens.");
+    });
+}
+
+if (deletePhoto) {
+    deletePhoto.addEventListener("click", function () {
+        alert("You deleted the photograph.");
+    });
 }
