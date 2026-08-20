@@ -67,7 +67,6 @@ if (openPhoto) {
     openPhoto.addEventListener("click", function () {
 
         story.innerHTML = "";
-
         choices.classList.add("hidden");
 
         const newLines = [
@@ -113,7 +112,6 @@ if (deletePhoto) {
     deletePhoto.addEventListener("click", function () {
 
         story.innerHTML = "";
-
         choices.classList.add("hidden");
 
         const newLines = [
