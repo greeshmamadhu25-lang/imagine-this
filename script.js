@@ -284,3 +284,37 @@ if (returnOpenedStory) {
     });
 
 }
+const returnOpenedStory = document.getElementById("returnOpenedStory");
+
+if (returnOpenedStory) {
+
+    const openedLines = [
+        "You opened the photograph last time.",
+        "You saw someone standing behind you.",
+        "You told yourself it was nothing.",
+        "You look at the photograph again.",
+        "The person is closer.",
+        "Much closer."
+    ];
+
+    openedLines.forEach(function (text, index) {
+
+        setTimeout(function () {
+
+            const line = document.createElement("p");
+
+            line.classList.add("story-line");
+
+            if (index === 4 || index === 5) {
+                line.classList.add("emphasis");
+            }
+
+            line.textContent = text;
+
+            returnOpenedStory.appendChild(line);
+
+        }, index * 2000);
+
+    });
+
+}
