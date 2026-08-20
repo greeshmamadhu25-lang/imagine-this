@@ -6,29 +6,83 @@
 
 body {
     min-height: 100vh;
-    background: #0b0b0f;
-    color: #f2f2f2;
+    background: #08080c;
+    color: #f5f5f5;
     font-family: Georgia, serif;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-align: center;
+    overflow: hidden;
 }
 
 .container {
-    max-width: 700px;
+    width: 90%;
+    max-width: 750px;
     padding: 40px;
+
+    animation: fadeIn 2s ease;
+}
+
+.small-text {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #666672;
+
+    margin-bottom: 35px;
 }
 
 h1 {
-    font-size: 64px;
+    font-size: clamp(50px, 9vw, 90px);
     font-weight: normal;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
 }
 
-p {
-    font-size: 20px;
-    color: #a9a9b2;
+.question {
+    font-size: 21px;
+    line-height: 1.7;
+    color: #aaaab5;
+
+    margin-bottom: 45px;
+}
+
+button {
+    padding: 14px 38px;
+
+    background: transparent;
+    color: #f5f5f5;
+
+    border: 1px solid #55555f;
+    border-radius: 30px;
+
+    font-size: 15px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    background: #f5f5f5;
+    color: #08080c;
+    border-color: #f5f5f5;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
