@@ -30,7 +30,6 @@ if (story) {
     function showNextLine() {
 
         if (index >= lines.length) {
-
             setTimeout(function () {
                 choices.classList.remove("hidden");
             }, 1200);
@@ -59,11 +58,14 @@ if (story) {
 }
 
 
+/* OPEN THE PHOTO */
+
 const openPhoto = document.getElementById("openPhoto");
-const deletePhoto = document.getElementById("deletePhoto");
 
 if (openPhoto) {
+
     openPhoto.addEventListener("click", function () {
+
         story.innerHTML = "";
 
         choices.classList.add("hidden");
@@ -96,11 +98,32 @@ if (openPhoto) {
             }, index * 1800);
 
         });
+
     });
+
 }
 
+
+/* DELETE THE PHOTO */
+
+const deletePhoto = document.getElementById("deletePhoto");
+
 if (deletePhoto) {
+
     deletePhoto.addEventListener("click", function () {
-        alert("You deleted the photograph.");
+
+        story.innerHTML = "";
+
+        choices.classList.add("hidden");
+
+        const line = document.createElement("p");
+
+        line.classList.add("story-line", "emphasis");
+
+        line.textContent = "You delete the photograph.";
+
+        story.appendChild(line);
+
     });
+
 }
