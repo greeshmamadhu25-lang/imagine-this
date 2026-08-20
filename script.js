@@ -64,7 +64,38 @@ const deletePhoto = document.getElementById("deletePhoto");
 
 if (openPhoto) {
     openPhoto.addEventListener("click", function () {
-        alert("The photograph opens.");
+        story.innerHTML = "";
+
+        choices.classList.add("hidden");
+
+        const newLines = [
+            "You open the photograph.",
+            "At first, everything looks normal.",
+            "Your bedroom is exactly as it is now.",
+            "Your eyes are closed.",
+            "But then you notice something.",
+            "Someone is standing behind you."
+        ];
+
+        newLines.forEach(function (text, index) {
+
+            setTimeout(function () {
+
+                const line = document.createElement("p");
+
+                line.classList.add("story-line");
+
+                if (index === 5) {
+                    line.classList.add("emphasis");
+                }
+
+                line.textContent = text;
+
+                story.appendChild(line);
+
+            }, index * 1800);
+
+        });
     });
 }
 
