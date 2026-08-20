@@ -68,6 +68,7 @@ if (openPhoto) {
 
         story.innerHTML = "";
         choices.classList.add("hidden");
+        localStorage.setItem("imagineChoice", "opened");
 
         const newLines = [
             "You open the photograph.",
@@ -113,6 +114,7 @@ if (deletePhoto) {
 
         story.innerHTML = "";
         choices.classList.add("hidden");
+        localStorage.setItem("imagineChoice", "deleted");
 
         const newLines = [
             "You delete the photograph.",
