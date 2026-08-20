@@ -40,10 +40,25 @@ if (savedChoice) {
 
 if (beginBtn) {
     beginBtn.addEventListener("click", function () {
+
         document.body.classList.add("fade-out");
 
         setTimeout(function () {
-            window.location.href = "story.html";
+
+            const savedChoice = localStorage.getItem("imagineChoice");
+
+            if (savedChoice === "deleted") {
+                window.location.href = "return-deleted.html";
+            }
+
+            else if (savedChoice === "opened") {
+                window.location.href = "return-opened.html";
+            }
+
+            else {
+                window.location.href = "story.html";
+            }
+
         }, 800);
     });
 }
