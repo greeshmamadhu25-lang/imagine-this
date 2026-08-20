@@ -1,4 +1,22 @@
-const beginBtn = document.getElementById("beginBtn");
+const savedChoice = localStorage.getItem("imagineChoice");
+
+if (savedChoice) {
+    const smallText = document.querySelector(".small-text");
+    const question = document.querySelector(".question");
+
+    if (smallText && question) {
+
+        smallText.textContent = "You came back.";
+
+        if (savedChoice === "deleted") {
+            question.textContent = "You deleted it last time.";
+        }
+
+        if (savedChoice === "opened") {
+            question.textContent = "You opened it last time.";
+        }
+    }
+}const beginBtn = document.getElementById("beginBtn");
 
 if (beginBtn) {
     beginBtn.addEventListener("click", function () {
