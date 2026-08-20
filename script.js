@@ -201,3 +201,36 @@ if (deletePhoto) {
     });
 
 }
+const returnStory = document.getElementById("returnStory");
+
+if (returnStory) {
+
+    const returnLines = [
+        "You deleted the photograph last time.",
+        "You thought that was the end of it.",
+        "It wasn't.",
+        "You check your phone.",
+        "There is one new photograph."
+    ];
+
+    returnLines.forEach(function (text, index) {
+
+        setTimeout(function () {
+
+            const line = document.createElement("p");
+
+            line.classList.add("story-line");
+
+            if (index === 2 || index === 4) {
+                line.classList.add("emphasis");
+            }
+
+            line.textContent = text;
+
+            returnStory.appendChild(line);
+
+        }, index * 2000);
+
+    });
+
+}
