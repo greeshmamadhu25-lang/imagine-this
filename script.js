@@ -1,12 +1,18 @@
+// ==============================
+// REMEMBER THE USER'S CHOICE
+// ==============================
+
 const savedChoice = localStorage.getItem("imagineChoice");
 
 console.log("Saved choice:", savedChoice);
 
 if (savedChoice) {
+
     const smallText = document.querySelector(".small-text");
     const question = document.querySelector(".question");
 
     if (smallText && question) {
+
         smallText.textContent = "You came back.";
 
         if (savedChoice === "deleted") {
@@ -18,56 +24,53 @@ if (savedChoice) {
         }
     }
 }
-const savedChoice = localStorage.getItem("imagineChoice");
 
-if (savedChoice) {
-    const smallText = document.querySelector(".small-text");
-    const question = document.querySelector(".question");
 
-    if (smallText && question) {
+// ==============================
+// ENTER BUTTON
+// ==============================
 
-        smallText.textContent = "You came back.";
-
-        if (savedChoice === "deleted") {
-            question.textContent = "You deleted it last time.";
-        }
-
-        if (savedChoice === "opened") {
-            question.textContent = "You opened it last time.";
-        }
-    }
-}const beginBtn = document.getElementById("beginBtn");
+const beginBtn = document.getElementById("beginBtn");
 
 if (beginBtn) {
+
     beginBtn.addEventListener("click", function () {
 
         document.body.classList.add("fade-out");
 
         setTimeout(function () {
 
-            const savedChoice = localStorage.getItem("imagineChoice");
+            const currentChoice = localStorage.getItem("imagineChoice");
 
-            if (savedChoice === "deleted") {
+            if (currentChoice === "deleted") {
+
                 window.location.href = "return-deleted.html";
-            }
 
-            else if (savedChoice === "opened") {
+            } else if (currentChoice === "opened") {
+
                 window.location.href = "return-opened.html";
-            }
 
-            else {
+            } else {
+
                 window.location.href = "story.html";
+
             }
 
         }, 800);
+
     });
+
 }
 
+
+// ==============================
+// FIRST STORY
+// ==============================
 
 const story = document.getElementById("story");
 const choices = document.getElementById("choices");
 
-if (story) {
+if (story && choices) {
 
     const lines = [
         "You wake up tomorrow.",
@@ -83,6 +86,7 @@ if (story) {
     function showNextLine() {
 
         if (index >= lines.length) {
+
             setTimeout(function () {
                 choices.classList.remove("hidden");
             }, 1200);
@@ -111,7 +115,9 @@ if (story) {
 }
 
 
-/* OPEN THE PHOTO */
+// ==============================
+// OPEN THE PHOTO
+// ==============================
 
 const openPhoto = document.getElementById("openPhoto");
 
@@ -121,6 +127,7 @@ if (openPhoto) {
 
         story.innerHTML = "";
         choices.classList.add("hidden");
+
         localStorage.setItem("imagineChoice", "opened");
 
         const newLines = [
@@ -157,7 +164,9 @@ if (openPhoto) {
 }
 
 
-/* DELETE THE PHOTO */
+// ==============================
+// DELETE THE PHOTO
+// ==============================
 
 const deletePhoto = document.getElementById("deletePhoto");
 
@@ -167,6 +176,7 @@ if (deletePhoto) {
 
         story.innerHTML = "";
         choices.classList.add("hidden");
+
         localStorage.setItem("imagineChoice", "deleted");
 
         const newLines = [
@@ -201,6 +211,12 @@ if (deletePhoto) {
     });
 
 }
+
+
+// ==============================
+// RETURNING USER — DELETED PATH
+// ==============================
+
 const returnStory = document.getElementById("returnStory");
 
 if (returnStory) {
