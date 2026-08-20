@@ -116,13 +116,34 @@ if (deletePhoto) {
 
         choices.classList.add("hidden");
 
-        const line = document.createElement("p");
+        const newLines = [
+            "You delete the photograph.",
+            "The screen goes black for a second.",
+            "Then your phone vibrates.",
+            "You have one new photo.",
+            "You stare at the screen.",
+            "It's the same photograph."
+        ];
 
-        line.classList.add("story-line", "emphasis");
+        newLines.forEach(function (text, index) {
 
-        line.textContent = "You delete the photograph.";
+            setTimeout(function () {
 
-        story.appendChild(line);
+                const line = document.createElement("p");
+
+                line.classList.add("story-line");
+
+                if (index === 5) {
+                    line.classList.add("emphasis");
+                }
+
+                line.textContent = text;
+
+                story.appendChild(line);
+
+            }, index * 1800);
+
+        });
 
     });
 
