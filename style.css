@@ -162,3 +162,10 @@ button:hover {
     color: #ffffff;
     transform: translateY(-2px);
 }
+.return-container {
+    max-width: 650px;
+}
+
+#returnStory {
+    min-height: 250px;
+}
