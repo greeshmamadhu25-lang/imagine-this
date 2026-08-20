@@ -86,3 +86,35 @@ button:hover {
         transform: translateY(0);
     }
 }
+.story-container {
+    max-width: 650px;
+}
+
+#story {
+    min-height: 250px;
+}
+
+.story-line {
+    font-size: 23px;
+    line-height: 1.8;
+    color: #d6d6dc;
+
+    opacity: 0;
+    transform: translateY(10px);
+
+    animation: storyAppear 1.2s ease forwards;
+
+    margin-bottom: 18px;
+}
+
+.story-line.emphasis {
+    color: #ffffff;
+    font-size: 27px;
+}
+
+@keyframes storyAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
